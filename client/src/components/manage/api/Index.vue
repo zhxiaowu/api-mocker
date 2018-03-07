@@ -1,7 +1,7 @@
 <template>
   <div class="manage-api">
     <el-table :data="richApis" style="width: 100%">
-      <el-table-column prop="options.method" label="Method" width="70">
+      <el-table-column prop="options.method" label="Method" width="100">
       </el-table-column>
       <el-table-column prop="name" label="API name">
       </el-table-column>
