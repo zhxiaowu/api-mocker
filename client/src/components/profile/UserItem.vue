@@ -2,15 +2,15 @@
   <el-form-item :label="item.label" class="profile-item">
     <template v-if="mode === 'read'">
       <span class="value">{{user[item.key]}}</span>
-      <el-button type="text" class="edit" icon="edit" @click="mode = 'edit'">修改</el-button>
+      <el-button type="text" class="edit" icon="edit" @click="mode = 'edit'">Edit</el-button>
     </template>
     <template v-else>
       <el-input :value="user[item.key]"
            size="small"
            @change="handleValueChange" />
       <span>
-        <el-button size="small" type="primary" @click="updateProfile">保存</el-button>
-        <el-button size="small" @click="mode = 'read'">取消</el-button>
+        <el-button size="small" type="primary" @click="updateProfile">Save</el-button>
+        <el-button size="small" @click="mode = 'read'">Cancel</el-button>
       </span>
     </template>
   </el-form-item>
@@ -40,7 +40,7 @@ export default {
     validateEmail () {
       const reg = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
       if (!reg.test(this.tempValue)) {
-        this.$message.error('邮箱格式错误')
+        this.$message.error('email is not a valid email')
         return false
       } else {
         return true
@@ -48,7 +48,7 @@ export default {
     },
     validate () {
       if (!this.tempValue) {
-        this.$message.error(`${this.item.label}不能为空`)
+        this.$message.error(`${this.item.label} is required`)
         return false
       }
       return this.item.key === 'email' ? this.validateEmail() : true
@@ -62,7 +62,7 @@ export default {
       data[this.item.key] = this.tempValue
       this.$store.dispatch('updateProfile', data).then(() => {
         this.mode = 'read'
-        this.$message.success('保存成功')
+        this.$message.success('Success')
       })
     }
   }

@@ -1,7 +1,7 @@
 <template>
-  <el-form-item label="密码" class="profile-item profile-password">
+  <el-form-item label="Password" class="profile-item profile-password">
     <el-button type="text" @click="dialogVisible = true">修改密码</el-button>
-    <el-dialog title="修改密码"
+    <el-dialog title="Change password"
                v-model="dialogVisible"
                size="tiny"
                :show-close="false"
@@ -11,25 +11,25 @@
         <el-form-item prop="originPassword">
           <el-input type="password"
                     auto-complete="off"
-                    placeholder="请输入原密码"
+                    placeholder="Please enter the original password"
                     v-model="passwordForm.originPassword"></el-input>
         </el-form-item>
         <el-form-item prop="password">
           <el-input type="password"
                     auto-complete="off"
-                    placeholder="请输入新密码"
+                    placeholder="Please enter a new password"
                     v-model="passwordForm.password"></el-input>
         </el-form-item>
         <el-form-item prop="verifyPassword">
           <el-input type="password"
                     auto-complete="off"
-                    placeholder="请确认新密码"
+                    placeholder="Please confirm the new password"
                     v-model="passwordForm.verifyPassword"></el-input>
         </el-form-item>
       </el-form>
       <div class="dialog-footer" slot="footer">
-        <el-button type="default" @click="handleCancel">取消</el-button>
-        <el-button type="primary" @click="handleSave" :disabled="disableSave">保存</el-button>
+        <el-button type="default" @click="handleCancel">Cancel</el-button>
+        <el-button type="primary" @click="handleSave" :disabled="disableSave">Save</el-button>
       </div>
     </el-dialog>
   </el-form-item>
@@ -85,7 +85,7 @@ export default {
     },
     updatePassword () {
       this.$store.dispatch('updatePassword', this.passwordForm).then(() => {
-        this.$message.success('更新成功')
+        this.$message.success('Success')
         this.dialogVisible = false
       }).catch(err => this.$message.error(err.msg))
     },

@@ -10,7 +10,7 @@
     </el-form-item>
     <el-form-item class="control">
       <el-button type="primary" @click="validate">Login</el-button>
-      <router-link class="reset-pass" to="find-pass">Forgot your password</router-link>
+      <router-link class="reset-pass" to="find-pass">Forgot your password?</router-link>
       <router-link class="register" to="register">--> Register</router-link>
     </el-form-item>
   </el-form>
