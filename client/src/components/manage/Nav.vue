@@ -1,15 +1,15 @@
 <template>
 <div>
   <el-menu :default-active="$route.name" :router="true" class="el-menu-vertical">
-    <el-menu-item-group title="管理设置">
+    <el-menu-item-group title="Manager">
       <el-menu-item index="ManageApi" :route="{name: 'ManageApi'}">
-        <i class="el-icon-minus"></i>管理<code>API</code>
+        <i class="el-icon-minus"></i><code>API</code>
       </el-menu-item>
       <el-menu-item index="ManageGroup" :route="{name: 'ManageGroup'}">
-        <i class="el-icon-minus"></i>管理分组
+        <i class="el-icon-minus"></i>Group
       </el-menu-item>
       <el-menu-item index="Profile" :route="{name: 'Profile'}">
-        <i class="el-icon-minus"></i>个人信息
+        <i class="el-icon-minus"></i>Profile
       </el-menu-item>
     </el-menu-item-group>
   </el-menu>

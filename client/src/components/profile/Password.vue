@@ -1,6 +1,6 @@
 <template>
   <el-form-item label="Password" class="profile-item profile-password">
-    <el-button type="text" @click="dialogVisible = true">修改密码</el-button>
+    <el-button type="text" @click="dialogVisible = true">Edit</el-button>
     <el-dialog title="Change password"
                v-model="dialogVisible"
                size="tiny"

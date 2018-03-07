@@ -1,15 +1,15 @@
 <template>
   <div class="manage-api">
     <el-table :data="richApis" style="width: 100%">
-      <el-table-column prop="options.method" label="方法" width="70">
+      <el-table-column prop="options.method" label="Method" width="70">
       </el-table-column>
-      <el-table-column prop="name" label="接口名">
+      <el-table-column prop="name" label="API name">
       </el-table-column>
-      <el-table-column prop="groupName" label="所属分组">
+      <el-table-column prop="groupName" label="Group">
       </el-table-column>
-      <el-table-column prop="createTime" :formatter="timeFormat" width="200" label="创建时间">
+      <el-table-column prop="createTime" :formatter="timeFormat" width="200" label="Create time">
       </el-table-column>
-      <el-table-column width="180" label="操作">
+      <el-table-column width="180" label="Operate">
         <template scope="scope">
           <control :api="scope.row" @delete="apiDelete" @manage="manageApi"></control>
         </template>
@@ -54,7 +54,7 @@ export default {
     ]),
     getGroup (groupId) {
       const group = this.groups.find(g => g._id === groupId)
-      return group ? group.name : '无权查看的分组'
+      return group ? group.name : 'No permissions'
     },
     manageApi (api) {
       this.api = api

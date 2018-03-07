@@ -13,7 +13,7 @@
          class="example"
          v-if="!diffMode"
          @click="isShowExample = !isShowExample">
-        {{isShowExample ? '结构' : '示例' }}
+        {{isShowExample ? 'Structure' : 'Example' }}
       </a>
     </div>
     <params-table :params="schema.params"

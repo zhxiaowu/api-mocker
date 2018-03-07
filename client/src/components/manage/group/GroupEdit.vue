@@ -1,23 +1,23 @@
 <template>
 <el-dialog :title="title" :visible="visible" @open="initLocalGroup" :show-close="false">
   <el-form v-stop-default-enter label-position="right" label-width="84px">
-    <el-form-item label="群名称：">
+    <el-form-item label="Group name：">
       <el-input v-model="localGroup.name"></el-input>
     </el-form-item>
-    <el-form-item label="隐私性：">
+    <el-form-item label="Privacy:">
       <el-radio-group v-model="localGroup.privacy">
-        <el-radio :label="0">所有人可见</el-radio>
-        <el-radio :label="1">组内成员可见</el-radio>
-        <el-radio :label="3">自己可见</el-radio>
+        <el-radio :label="0">Everyone</el-radio>
+        <el-radio :label="1">Group members</el-radio>
+        <el-radio :label="3">Private</el-radio>
       </el-radio-group>
     </el-form-item>
-    <el-form-item label="接口操作：">
+    <el-form-item label="Permissions:">
       <el-radio-group v-model="localGroup.operation">
-        <el-radio :label="0">所有人可操作</el-radio>
-        <el-radio :label="1">组内成员可操作</el-radio>
+        <el-radio :label="0">Everyone</el-radio>
+        <el-radio :label="1">Group members</el-radio>
       </el-radio-group>
     </el-form-item>
-    <el-form-item label="组内成员：">
+    <el-form-item label="Member:">
       <user-selector
         class="group-member"
         :value="localGroup.member"
@@ -29,8 +29,8 @@
     </el-form-item>
   </el-form>
   <div slot="footer" class="dialog-footer">
-    <el-button @click="cancel">取 消</el-button>
-    <el-button type="primary" @click="confirm">确 定</el-button>
+    <el-button @click="cancel">Cancel</el-button>
+    <el-button type="primary" @click="confirm">Enter</el-button>
   </div>
 </el-dialog>
 </template>
@@ -89,7 +89,7 @@ export default {
     },
     confirm () {
       this.$store.dispatch('updateGroup', this.localGroup).then(rs => {
-        this.$message.success('更新成功')
+        this.$message.success('Success')
         this.$emit('update', rs.data)
         this.$emit('hide')
       }).catch(err => this.$message.error(err.msg))
