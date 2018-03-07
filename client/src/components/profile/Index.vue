@@ -22,10 +22,10 @@ export default {
   computed: {
     userItems () {
       return [{
-        label: '姓名',
+        label: 'Name',
         key: 'name'
       }, {
-        label: '邮箱',
+        label: 'Email',
         key: 'email'
       }]
     }
