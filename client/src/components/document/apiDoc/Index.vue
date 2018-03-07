@@ -22,7 +22,7 @@
       </div>
       <div class="field url">
         <div>
-          <label><code>Mock</code>url：</label>
+          <label><code>Mock</code> url：</label>
           <p class="prod code">{{url}}</p>
         </div>
         <div v-if="api.devUrl" :class="diffStyle('devUrl')">

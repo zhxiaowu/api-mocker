@@ -1,10 +1,10 @@
 <template>
   <div class="api-info el-col" v-side-bar>
     <el-form>
-      <el-form-item label="接口名称" class="required">
+      <el-form-item label="Api name" class="required">
         <el-input auto-complete="off" v-model="name"></el-input>
       </el-form-item>
-      <el-form-item label="接口分组" class="required">
+      <el-form-item label="Group" class="required">
         <i class="el-icon-plus title-icon create-group" @click="showCreateGroup = true"></i>
         <div class="group-select">
           <el-row type="flex" >
@@ -20,10 +20,10 @@
           </el-row>
         </div>
       </el-form-item>
-      <el-form-item label="测试地址">
+      <el-form-item label="Test url">
         <el-input auto-complete="off" v-model="devUrl" placeholder="请填写绝对路径"></el-input>
       </el-form-item>
-      <el-form-item label="线上地址">
+      <el-form-item label="Prod url">
         <el-input auto-complete="off" v-model="prodUrl" placeholder="请填写绝对路径"></el-input>
       </el-form-item>
       <el-form-item label="代理转发">

@@ -3,9 +3,9 @@
   <div class="header">
     <h4>Mock request</h4>
     <el-button-group class="control" :class="interval">
-      <el-button class="week" @click="getData('week')">周</el-button>
-      <el-button class="mouth" @click="getData('mouth')">月</el-button>
-      <el-button class="quarter" @click="getData('quarter')">季</el-button>
+      <el-button class="week" @click="getData('week')">Week</el-button>
+      <el-button class="mouth" @click="getData('mouth')">Mouth</el-button>
+      <el-button class="quarter" @click="getData('quarter')">Quarter</el-button>
     </el-button-group>
   </div>
   <chart-line v-if="mockData.x.length"
