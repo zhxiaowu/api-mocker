@@ -1,6 +1,6 @@
 <template>
 <div class="chart-line">
-折线图
+Chart line
 </div>
 </template>
 

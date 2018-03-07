@@ -1,11 +1,11 @@
 <template>
-  <el-dialog title="创建Group" v-model="visited" :show-close="false" class="create-group-dialog">
+  <el-dialog title="Create Group" v-model="visited" :show-close="false" class="create-group-dialog">
     <el-form v-stop-default-enter>
-      <el-input v-model="input" placeholder="输入分组名称"></el-input>
+      <el-input v-model="input" placeholder="Group name"></el-input>
     </el-form>
     <div class="dialog-footer" slot="footer">
-      <el-button type="default" @click="handleClickCancel">取消</el-button>
-      <el-button type="primary" @click="handleClickAction" ref="create" :disabled="actionDisabled">创建</el-button>
+      <el-button type="default" @click="handleClickCancel">Cancel</el-button>
+      <el-button type="primary" @click="handleClickAction" ref="create" :disabled="actionDisabled">Create</el-button>
     </div>
   </el-dialog>
 </template>

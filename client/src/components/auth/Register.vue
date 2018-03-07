@@ -1,7 +1,7 @@
 <template>
 <div class="login-box">
   <el-form label-position="left" :model="registerForm" :rules="registerRules" ref="registerForm">
-    <p class="app-name">账号注册</p>
+    <p class="app-name">Register</p>
     <el-form-item prop="email">
       <el-input placeholder="email" v-model="registerForm.email" ></el-input>
     </el-form-item>
@@ -15,8 +15,8 @@
       <el-input type="password" placeholder="verify password" v-model="registerForm.verifyPassword"></el-input>
     </el-form-item>
     <el-form-item class="control">
-      <el-button type="primary" @click="validate">注册</el-button>
-      <router-link class="login" to="login">--> 登录</router-link>
+      <el-button type="primary" @click="validate">Submit</el-button>
+      <router-link class="login" to="login">--> Login</router-link>
     </el-form-item>
   </el-form>
 </div>
@@ -72,13 +72,13 @@ export default {
     },
     register () {
       this.$store.dispatch('register', this.registerForm).then(() => {
-        this.$message.success('注册成功, 即将跳转')
+        this.$message.success('Success')
         window.setTimeout(() => {
           this.$router.push({
             name: 'AllList'
           })
         }, 1000)
-      }).catch(err => this.$message.error(`注册失败：${err.msg}`))
+    }).catch(err => this.$message.error(`Failed：${err.msg}`))
     }
   }
 }

@@ -1,17 +1,17 @@
 <template>
   <div class="apis-doc" v-if="group">
     <div class="title">
-      {{group.name}}接口文档
+      {{group.name}} apis document
       <div class="control">
         <el-button class="follow"
                     icon="star-on"
                     v-if="followed"
                     type="primary"
-                    @click="unfollowGroup(group._id)">取消订阅</el-button>
+                    @click="unfollowGroup(group._id)">unfollow</el-button>
         <el-button class="follow"
                     icon="star-off"
                     v-else
-                    @click="followGroup(group._id)">订阅</el-button>
+                    @click="followGroup(group._id)">follow</el-button>
       </div>
     </div>
     <api-doc :api="api" v-for="api in apis" :key="api._id"></api-doc>

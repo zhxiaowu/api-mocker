@@ -5,9 +5,9 @@
       <el-col class="key" :style="keyStyle" :class="getDiffStyle('key')">{{param.key}}</el-col>
       <div class="row-and-col">
         <el-col class="type" :class="getDiffStyle('type')">{{param.type}}<code class="array-type" v-if="param.type === 'array'">[{{param.items.type}}]</code></el-col>
-        <el-col class="required" :class="getDiffStyle('required')">{{param.required ? '是' : '否'}}</el-col>
-        <el-col class="comment" :class="getDiffStyle('comment')">{{param.comment ? param.comment : '无'}}</el-col>
-        <el-col class="example" :class="getDiffStyle('example')">{{param.example !== undefined ? param.example : '无'}}</el-col>
+        <el-col class="required" :class="getDiffStyle('required')">{{param.required ? 'Y' : 'N'}}</el-col>
+        <el-col class="comment" :class="getDiffStyle('comment')">{{param.comment ? param.comment : 'None'}}</el-col>
+        <el-col class="example" :class="getDiffStyle('example')">{{param.example !== undefined ? param.example : 'None'}}</el-col>
       </div>
     </el-row>
     <slot name="params"></slot>

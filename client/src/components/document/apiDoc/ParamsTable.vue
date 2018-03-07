@@ -2,12 +2,12 @@
   <div class="params-table">
     <div class="hd">
       <el-row type="flex">
-        <el-col class="key">参数名</el-col>
+        <el-col class="key">Name</el-col>
         <div class="row-and-col">
-          <el-col class="type">类型</el-col>
-          <el-col class="required">是否必填</el-col>
-          <el-col class="comment">备注</el-col>
-          <el-col class="example">示例</el-col>
+          <el-col class="type">Type</el-col>
+          <el-col class="required">Required</el-col>
+          <el-col class="comment">Desc</el-col>
+          <el-col class="example">Example</el-col>
         </div>
       </el-row>
     </div>

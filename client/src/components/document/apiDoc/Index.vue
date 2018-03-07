@@ -7,35 +7,35 @@
           <span class="method" :class="methodStyle">{{method}}</span>
         </h2>
         <div class="control" v-if="!isPreview && !diffMode">
-          <el-button class="follow" @click="diff()">历史对比</el-button>
+          <el-button class="follow" @click="diff()">diff</el-button>
           <el-button class="follow"
                      icon="star-on"
                      v-if="followed"
                      type="primary"
-                     @click="cancelfollow()">取消订阅</el-button>
+                     @click="cancelfollow()">unfollow</el-button>
           <el-button class="follow"
                      icon="star-off"
                      v-else
-                     @click="doFollow()">订阅</el-button>
-          <el-button type="primary" class="edit" icon="edit" @click="edit()">编辑</el-button>
+                     @click="doFollow()">follow</el-button>
+          <el-button type="primary" class="edit" icon="edit" @click="edit()">edit</el-button>
         </div>
       </div>
       <div class="field url">
         <div>
-          <label><code>Mock</code>地址：</label>
+          <label><code>Mock</code>url：</label>
           <p class="prod code">{{url}}</p>
         </div>
         <div v-if="api.devUrl" :class="diffStyle('devUrl')">
-          <label>测试地址：</label>
+          <label>Test url：</label>
           <p class="prod code">{{api.devUrl}}</p>
         </div>
         <div v-if="api.prodUrl" :class="diffStyle('prodUrl')">
-          <label>线上地址：</label>
+          <label>Prod url：</label>
           <p class="prod code">{{api.prodUrl}}</p>
         </div>
       </div>
       <div class="field">
-        <label>提交参数</label>
+        <label>Params</label>
         <schema v-for="(schema, key) in schemaParams"
                 v-if="hasParams(schema.params)"
                 :diff-mode="diffMode"
@@ -46,11 +46,11 @@
                 :key="key"></schema>
       </div>
       <div class="field" v-if="headers.params.length">
-        <label>请求头</label>
+        <label>Headers</label>
         <schema :schema="headers" name="headers"></schema>
       </div>
       <div class="field" v-if="api.options.response && api.options.response.length">
-        <label>返回结果</label>
+        <label>Response</label>
         <schemas :schemas="api.options.response"
                  name="response"
                  :diff-mode="diffMode"
@@ -58,11 +58,11 @@
                  :diff-path="'options.response'"></schemas>
       </div>
       <div class="field mock-data" v-else>
-        <label>Mock数据</label>
+        <label>Mock data</label>
         <mock-data :mock-data="api.dsl"></mock-data>
       </div>
       <div class="field desc" v-show="api.desc">
-        <label>其他备注</label>
+        <label>Desc</label>
         <div class="editor-style" v-html="api.desc" :class="diffStyle('desc')"></div>
       </div>
     </div>

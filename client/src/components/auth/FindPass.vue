@@ -1,13 +1,13 @@
 <template>
   <div class="login-box reset-password">
     <el-form label-position="left" :model="findForm" :rules="resetRules" ref="findForm" v-stop-default-enter>
-      <p class="app-name">找回密码</p>
+      <p class="app-name">Reset password</p>
       <el-form-item prop="email">
         <el-input placeholder="email" v-model="findForm.email"></el-input>
       </el-form-item>
       <el-form-item class="control">
-        <el-button type="primary" @click="validate">发送邮件</el-button>
-        <router-link class="login" to="login">--> 登录</router-link>
+        <el-button type="primary" @click="validate">Send</el-button>
+        <router-link class="login" to="login">--> Login</router-link>
       </el-form-item>
     </el-form>
   </div>
@@ -38,15 +38,15 @@ export default {
       }
       this.$refs.findForm.validateField('email', rs => {
         if (rs) {
-          this.$message.error('请填写正确的邮箱地址')
+          this.$message.error('email is not a valid email')
           return
         }
         this.sentCodeToken = true
         this.sendResetPassTicket(this.findForm.email).then(() => {
-          this.$message.info('发送验证码成功，请注意查收邮件')
+          this.$message.info('Send success, please check the email.')
           this.sentCodeToken = false
         }).catch(err => {
-          this.$message.error(`发送失败：${err.msg}`)
+          this.$message.error(`Send failed：${err.msg}`)
           this.sentCodeToken = false
         })
       })
