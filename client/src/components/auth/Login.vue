@@ -54,7 +54,7 @@ export default {
             name: 'AllList'
           })
         }, 1000)
-    }).catch(err => this.$message.error(`Failed：${err.msg}`))
+      }).catch(err => this.$message.error(`Failed：${err.msg}`))
     }
   }
 }
